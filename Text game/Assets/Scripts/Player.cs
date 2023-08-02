@@ -18,6 +18,7 @@ public class PlayerData
     public float Mood;
     public int Money;
     public int Age;
+    public JobObj job;
 }
 
 public class Player : MonoBehaviour
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
     public static float HealthMax = 100;
     public static float SleepyMax = 100;
     public static float MoodMax = 100;
+    public static JobObj job;
 
 
     public TextMeshProUGUI HPtext;
@@ -50,7 +52,11 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI MoodText;
     public TextMeshProUGUI MoneyText;
 
+
+
+
     private PlayerData playerData = new PlayerData();
+
 
 
 
@@ -143,6 +149,7 @@ public class Player : MonoBehaviour
         playerData.Sleepy = Sleepy;
         playerData.Mood = Mood;
         playerData.Money = Money;
+        playerData.job = job;
 
         string jsonData = JsonUtility.ToJson(playerData);
 
@@ -167,6 +174,7 @@ public class Player : MonoBehaviour
             Sleepy = playerData.Sleepy;
             Mood = playerData.Mood;
             Money = playerData.Money;
+            job = playerData.job;
 
             UpdateStatsText();
         }

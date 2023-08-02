@@ -15,6 +15,7 @@ public class City : MonoBehaviour
     }
 
     public string NameOfCity;
+    public GameObject MapObj;
     public List<Shop> shops;
     public Image Map;
     public int OurPoint;
@@ -35,8 +36,16 @@ public class City : MonoBehaviour
         SaveData();
     }
 
+    private void FixedUpdate()
+    {
+        PlayerPositionObj.transform.position = MapPoints[OurPoint].transform.position;
+    }
 
-
+    public void OpenMap()
+    {
+        if (MapObj.active) MapObj.SetActive(false);
+        else MapObj.SetActive(true);
+    }
 
 
     public void SaveData()
