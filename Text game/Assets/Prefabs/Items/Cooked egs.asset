@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8bd19e3e93f96444b435d97430907ad, type: 3}
-  m_Name: Knife
+  m_Name: Cooked egs
   m_EditorClassIdentifier: 
-  name: Knife
-  description: Its sharp
-  icon: {fileID: 78455112, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
-  itemsType: 4
+  name: Egs
+  description: Now you can eat it
+  icon: {fileID: 700444816, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
+  itemsType: 1
+  AddFood: 60
+  AddWater: 5

@@ -16,8 +16,16 @@ public class Inventory : MonoBehaviour
     public TextMeshProUGUI DescriptionText;
     public InventoriesManager IO;
     public Sprite SlotIcon;
+    private WaitManager WM;
+    private MassageBox MB;
 
 
+
+    private void Start()
+    {
+        WM = GameObject.FindAnyObjectByType<WaitManager>();
+        MB = GameObject.FindAnyObjectByType<MassageBox>();
+    }
     private void FixedUpdate()
     {
         for (int i = 0; i < slots.Length; i++)
@@ -63,13 +71,21 @@ public class Inventory : MonoBehaviour
                 switch (currentItem.itemsType)
                 {
                     case ItemsType.Water:
+                        Player.ChangeHungry(currentItem.AddFood);
+                        Player.ChangeThirsty(currentItem.AddWater);
                         Debug.Log("Using Water");
                         break;
                     case ItemsType.Food:
+                        Player.ChangeHungry(currentItem.AddFood);
+                        Player.ChangeThirsty(currentItem.AddWater);
                         Debug.Log("Using Food");
                         break;
                     case ItemsType.Ticket:
                         Debug.Log("Using Ticket");
+                        break;
+                    case ItemsType.Instrument:
+                        MB.SendMessage("Cant use it now");
+                        Debug.Log("Using Instrument");
                         break;
                     case ItemsType.Gun:
                         Debug.Log("Using Gun");

@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8bd19e3e93f96444b435d97430907ad, type: 3}
-  m_Name: Knife
+  m_Script: {fileID: 11500000, guid: 19d8756883f916f49bbde6548758b0d5, type: 3}
+  m_Name: Tea
   m_EditorClassIdentifier: 
-  name: Knife
-  description: Its sharp
-  icon: {fileID: 78455112, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
-  itemsType: 4
+  icon: {fileID: -767734526, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
+  name: Tea
+  Price: 15
+  AddFood: 5
+  AddWater: 60
+  TimeToEat: 2
+  TimeString: Tea from England

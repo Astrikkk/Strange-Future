@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Piece of sousage
   description: Eat me
-  icon: {fileID: -708992395, guid: 04a4fff2da0bcad4cbffadbc62e9f78a, type: 3}
+  icon: {fileID: -202170447, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
   itemsType: 1
+  AddFood: 10
+  AddWater: 0

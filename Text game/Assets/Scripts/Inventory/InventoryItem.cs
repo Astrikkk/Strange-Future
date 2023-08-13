@@ -10,4 +10,6 @@ public class InventoryItem : ScriptableObject
     public string description;
     public Sprite icon;
     public ItemsType itemsType;
+    public int AddFood;
+    public int AddWater;
 }

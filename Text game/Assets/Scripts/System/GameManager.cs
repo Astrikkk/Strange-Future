@@ -7,11 +7,13 @@ public class GameManager : MonoBehaviour
     public Player player;
     public InventoriesManager IM;
     public MenuManager MM;
+    public bool NeedDoResetData;
 
     private void Start()
     {
         MM = gameObject.GetComponent<MenuManager>();
-        SavePlayerData();
+        if (NeedDoResetData)
+            SavePlayerData();
         LoadPlayerData();
     }
 

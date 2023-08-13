@@ -9,9 +9,10 @@ public class MenuManager : MonoBehaviour
     public GameObject box;
     public GameObject Inventory;
     public WaitManager WM;
+    public City city;
 
 
-    private int currentMenu = 0;
+    public int currentMenu = 0;
     private bool IsOpenInventory = false;
 
     private const string CurrentMenuKey = "CurrentMenu";
@@ -34,6 +35,7 @@ public class MenuManager : MonoBehaviour
     }
     public void OpenCloseInventory()
     {
+        if (city.GetOpen()) city.OpenMap();
         if (IsOpenInventory)
         {
             Inventory.SetActive(false);
