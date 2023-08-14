@@ -18,7 +18,9 @@ public class Inventory : MonoBehaviour
     public Sprite SlotIcon;
     private WaitManager WM;
     private MassageBox MB;
-
+    public List<InventoryItem> AllExistItems;
+    public Color ChoosenSlot;
+    public Color Defaultcolor;
 
 
     private void Start()
@@ -73,11 +75,14 @@ public class Inventory : MonoBehaviour
                     case ItemsType.Water:
                         Player.ChangeHungry(currentItem.AddFood);
                         Player.ChangeThirsty(currentItem.AddWater);
+                        RemoveItem(currentItem);
+                        AddObj(AllExistItems[0]);
                         Debug.Log("Using Water");
                         break;
                     case ItemsType.Food:
                         Player.ChangeHungry(currentItem.AddFood);
                         Player.ChangeThirsty(currentItem.AddWater);
+                        RemoveItem(currentItem);
                         Debug.Log("Using Food");
                         break;
                     case ItemsType.Ticket:
@@ -124,9 +129,11 @@ public class Inventory : MonoBehaviour
 
     public void ChangeCurrentItem(int index)
     {
+        slots[currentItemIndex].color = Defaultcolor;
         if (index >= 0 && index < items.Count)
         {
             currentItemIndex = index;
+            slots[currentItemIndex].color = ChoosenSlot;
         }
     }
 

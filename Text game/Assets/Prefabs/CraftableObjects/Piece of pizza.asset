@@ -20,4 +20,4 @@ MonoBehaviour:
   DisappearingItems: 01000000
   requiredItems:
   - {fileID: 11400000, guid: a1656bb2f59b3404794f924296d5e485, type: 2}
-  - {fileID: 11400000, guid: ff6ad3a3ca12e23468f33ef14b083d1e, type: 2}
+  - {fileID: 11400000, guid: 9990327086fff6d419a53813d6e2ff88, type: 2}

@@ -15,6 +15,8 @@ public class Box : MonoBehaviour
     public TextMeshProUGUI DescriptionText;
     public TextMeshProUGUI NameOfBox;
     public Inventory inventory;
+    public Color ChoosenSlot;
+    public Color Defaultcolor;
 
 
     public void ShowIcon()
@@ -54,12 +56,13 @@ public class Box : MonoBehaviour
         }
         return null;
     }
-
     public void ChangeCurrentItem(int index)
     {
+        slots[currentItemIndex].color = Defaultcolor;
         if (index >= 0 && index < items.Count)
         {
             currentItemIndex = index;
+            slots[currentItemIndex].color = ChoosenSlot;
         }
     }
 

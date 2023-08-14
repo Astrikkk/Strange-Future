@@ -23,7 +23,7 @@ public class CraftingTable : MonoBehaviour
 
     public void Craft(CraftableItem item)
     {
-        if (inventory.CanFitItemsInInventory(item.Item.Count))
+        if (inventory.CanFitItemsInInventory(item.Item.Count) && CheckIFCanCraft(item))
         {
             for (int i = 0; i < item.Item.Count; i++)
             {

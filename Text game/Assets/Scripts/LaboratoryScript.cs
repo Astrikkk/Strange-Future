@@ -2,17 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class LaboratoryData
+{
+    public List<InventoryItem> RequiredItems;
+    public bool HaveBlueprint;
+    public bool CanEnter;
+}
+
+
+
 public class LaboratoryScript : MonoBehaviour
 {
     public List<InventoryItem> RequiredItems;
     private Inventory inventory;
     public bool HaveBlueprint;
     private MassageBox MB;
+    public bool CanEnter;
+    private MenuManager MM;
+    private City city;
+
+
 
     private void Start()
     {
         MB = GameObject.FindAnyObjectByType<MassageBox>();
+        MM = GameObject.FindAnyObjectByType<MenuManager>();
+        city = GameObject.FindAnyObjectByType<City>();
         inventory = GameObject.FindAnyObjectByType<Inventory>();
+    }
+
+    public void EnterLaboratory()
+    {
+        if (CanEnter)
+        {
+            MM.ChangeMenu(8);
+            city.Travel(9);
+        }
     }
 
     public void PlaceAllItems()
@@ -45,5 +71,35 @@ public class LaboratoryScript : MonoBehaviour
             RequiredItems.Remove(item);
         }
     }
+
+
+
+    public void SaveData()
+    {
+        LaboratoryData data = new LaboratoryData
+        {
+            HaveBlueprint = HaveBlueprint,
+            CanEnter = CanEnter,
+            RequiredItems = RequiredItems
+        };
+
+        string json = JsonUtility.ToJson(data);
+        PlayerPrefs.SetString("LaboratoryData", json);
+    }
+
+    public void LoadData()
+    {
+        string json = PlayerPrefs.GetString("LaboratoryData", "");
+        if (!string.IsNullOrEmpty(json))
+        {
+            LaboratoryData data = JsonUtility.FromJson<LaboratoryData>(json);
+
+            HaveBlueprint = data.HaveBlueprint;
+            CanEnter = data.CanEnter;
+            RequiredItems = data.RequiredItems;
+        }
+    }
+
+
 
 }

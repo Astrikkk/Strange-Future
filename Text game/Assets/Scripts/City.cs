@@ -11,7 +11,6 @@ public class City : MonoBehaviour
         public string NameOfCity;
         public List<Shop> shops;
         public int OurPoint;
-        public List<int> MapPointsMenu;
     }
 
     public string NameOfCity;
@@ -24,7 +23,6 @@ public class City : MonoBehaviour
 
     public List<Transform> MapPoints;
     public List<GameObject> Marks;
-    public List<int> MapPointsMenu;
 
 
     private bool IsOpenMap;
@@ -96,7 +94,6 @@ public class City : MonoBehaviour
             NameOfCity = NameOfCity,
             shops = shops,
             OurPoint = OurPoint,
-            MapPointsMenu = MapPointsMenu
         };
 
         string json = JsonUtility.ToJson(data);
@@ -117,7 +114,6 @@ public class City : MonoBehaviour
             NameOfCity = data.NameOfCity;
             shops = data.shops;
             OurPoint = data.OurPoint;
-            MapPointsMenu = data.MapPointsMenu;
 
             PlayerPositionObj.transform.position = MapPoints[OurPoint].position;
         }

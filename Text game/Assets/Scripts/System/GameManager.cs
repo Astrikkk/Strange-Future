@@ -7,13 +7,21 @@ public class GameManager : MonoBehaviour
     public Player player;
     public InventoriesManager IM;
     public MenuManager MM;
+    public City city;
     public bool NeedDoResetData;
+    private LaboratoryScript Lab;
 
     private void Start()
     {
+        Lab = FindObjectOfType<LaboratoryScript>();
         MM = gameObject.GetComponent<MenuManager>();
+        LoadResetStatus();
         if (NeedDoResetData)
+        {
             SavePlayerData();
+            NeedDoResetData = false;
+            SaveResetStatus();
+        }
         LoadPlayerData();
     }
 
@@ -22,6 +30,8 @@ public class GameManager : MonoBehaviour
         player.SavePlayerData();
         IM.SaveAllInventoriesToJson();
         MM.SaveToPlayerPrefs();
+        city.SaveData();
+        Lab.SaveData();
     }
 
     private void LoadPlayerData()
@@ -29,6 +39,8 @@ public class GameManager : MonoBehaviour
         player.LoadPlayerData();
         IM.LoadAllInventoriesFromJson();
         MM.LoadFromPlayerPrefs();
+        city.LoadData();
+        Lab.LoadData();
     }
 
 
@@ -52,4 +64,14 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+    private void SaveResetStatus()
+    {
+        PlayerPrefs.SetInt("ResetStatus", NeedDoResetData ? 1 : 0);
+    }
+
+    private void LoadResetStatus()
+    {
+        NeedDoResetData = PlayerPrefs.GetInt("ResetStatus", 0) == 1;
+    }
+
 }

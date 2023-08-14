@@ -23,6 +23,7 @@ public class InventoriesManager : MonoBehaviour
         if (index >= 0 && index < boxes[currentBox].items.Count)
         {
             currentItemIndex = index;
+            boxes[currentBox].ChangeCurrentItem(index);
         }
     }
 
