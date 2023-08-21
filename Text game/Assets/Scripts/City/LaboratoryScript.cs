@@ -39,6 +39,10 @@ public class LaboratoryScript : MonoBehaviour
             MM.ChangeMenu(8);
             city.Travel(9);
         }
+        else
+        {
+            MB.SendMessage("You cant enter this place !!");
+        }
     }
 
     public void PlaceAllItems()

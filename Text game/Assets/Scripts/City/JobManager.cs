@@ -6,12 +6,13 @@ public class JobManager : MonoBehaviour
 {
     private WaitManager WM;
     private MassageBox MB;
-
+    private Timer timer;
 
     private void Start()
     {
         WM = GameObject.FindFirstObjectByType<WaitManager>();
         MB = GameObject.FindFirstObjectByType<MassageBox>();
+        timer = GameObject.FindFirstObjectByType<Timer>();
     }
 
     public void Work(JobObj job)
@@ -21,6 +22,7 @@ public class JobManager : MonoBehaviour
             Player.ChangeMoney(Player.job.salary);
             WM.SetTime(Player.job.TimeOfWorking);
             WM.SetTime("Working");
+            timer.AddHours(job.HoursWorking);
         }
         else MB.SendMessage("You are not working here");
     }

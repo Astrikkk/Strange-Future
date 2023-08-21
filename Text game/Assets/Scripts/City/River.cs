@@ -9,15 +9,15 @@ public class River : MonoBehaviour
     private Inventory inventory;
     private WaitManager Wm;
     private MassageBox MB;
+    private Timer timer;
 
     private void Start()
     {
-        inventory = FindFirstObjectByType<Inventory>();
-        Wm = FindFirstObjectByType<WaitManager>();
-        MB = FindFirstObjectByType<MassageBox>();
+        inventory = FindObjectOfType<Inventory>();
+        Wm = FindObjectOfType<WaitManager>();
+        MB = FindObjectOfType<MassageBox>();
+        timer = FindObjectOfType<Timer>();
     }
-
-
 
     public void Swim()
     {
@@ -39,7 +39,7 @@ public class River : MonoBehaviour
         }
         else
         {
-            MB.SendMessage("You dont have a fishing row");
+            MB.SendMessage("You dont have a fishing rod");
         }
     }
 }

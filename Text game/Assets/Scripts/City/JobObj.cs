@@ -9,4 +9,5 @@ public class JobObj : ScriptableObject
     public string description;
     public int salary;
     public int TimeOfWorking;
+    public int HoursWorking;
 }

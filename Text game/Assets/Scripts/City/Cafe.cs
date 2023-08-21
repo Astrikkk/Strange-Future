@@ -9,6 +9,7 @@ public class Cafe : MonoBehaviour
     public WaitManager WM;
     public GameObject CafeBuyMenu;
     private BuyManager BM;
+    private Timer timer;
 
     private CafeItem currentItem;
     public void Buy()
@@ -20,6 +21,7 @@ public class Cafe : MonoBehaviour
             Player.ChangeThirsty(currentItem.AddWater);
             WM.SetTime(currentItem.TimeToEat);
             WM.SetTime(currentItem.TimeString);
+            timer.AddHours(1);
         }
         BM.BuymanagerObj.SetActive(false);
     }
@@ -28,6 +30,7 @@ public class Cafe : MonoBehaviour
     {
         WM=GameObject.FindAnyObjectByType<WaitManager>();
         BM = FindObjectOfType<BuyManager>();
+        timer = FindObjectOfType<Timer>();
     }
 
     public void Eat(CafeItem item)

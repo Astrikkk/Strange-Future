@@ -17,12 +17,13 @@ public class MenuManager : MonoBehaviour
 
     private const string CurrentMenuKey = "CurrentMenu";
 
-    private void Awake()
+    private void Start()
     {
         for (int i = 0; i < menues.Length; i++)
         {
             menues[i].Menu.SetActive(false);
         }
+        menues[currentMenu].Menu.SetActive(true);
     }
     public void ChangeMenu(int a)
     {

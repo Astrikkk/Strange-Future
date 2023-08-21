@@ -27,17 +27,21 @@ public class DialogueSystem : MonoBehaviour
         currentDialogue = LaunchedDialogue;
         DialogMenu.SetActive(true);
         BackGround.sprite = currentDialogue.BackGround;
-        Speaker.sprite = currentDialogue.dialoque.Person[0];
-        DialogueText.text = currentDialogue.dialoque.Text[0];
+        Speaker.sprite = currentDialogue.Person[0];
+        DialogueText.text = currentDialogue.Text[0];
     }
 
     public void Next()
     {
-        if (currentDialogue.dialoque.Text.Count > DialogueIndex)
+        if (currentDialogue.Text.Count > DialogueIndex + 1)
         {
             DialogueIndex++;
-            Speaker.sprite = currentDialogue.dialoque.Person[DialogueIndex];
-            DialogueText.text = currentDialogue.dialoque.Text[DialogueIndex];
+            Speaker.sprite = currentDialogue.Person[DialogueIndex];
+            DialogueText.text = currentDialogue.Text[DialogueIndex];
+        }
+        else
+        {
+            EndDialoque();
         }
     }
 
