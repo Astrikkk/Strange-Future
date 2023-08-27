@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 
+public enum TypeOfActivity {Eating, Sleaping, Working, Relaxing, Traveling }
+
 public class WaitManager : MonoBehaviour
 {
     public WaitAction WA;
@@ -31,11 +33,84 @@ public class WaitManager : MonoBehaviour
         WA.SaveToPlayerPrefs();
         WaitMenu.SetActive(true);
     }
-    public void SetTime(string Atext)
+
+
+    public void SetTimeTypeButtonEating()
     {
+        SetTimeType(TypeOfActivity.Eating);
+    }
+
+    public void SetTimeTypeButtonSleaping()
+    {
+        SetTimeType(TypeOfActivity.Sleaping);
+    }
+
+    public void SetTimeTypeButtonWorking()
+    {
+        SetTimeType(TypeOfActivity.Working);
+    }
+
+    public void SetTimeTypeButtonRelaxing()
+    {
+        SetTimeType(TypeOfActivity.Relaxing);
+    }
+
+    public void SetTimeTypeButtonTraveling()
+    {
+        SetTimeType(TypeOfActivity.Traveling);
+    }
+
+
+
+
+    public void SetTimeType(TypeOfActivity type)
+    {
+        string Atext = GetActionTextByType(type);
         WA.ActionText = Atext;
         WA.SaveToPlayerPrefs();
         WaitMenu.SetActive(true);
+    }
+    private string GetActionTextByType(TypeOfActivity type)
+    {
+        switch (LanguageManager.LanguageIndex)
+        {
+            case 0:
+                switch (type)
+                {
+                    case TypeOfActivity.Eating:
+                        return "Time to fill your stomach";
+                    case TypeOfActivity.Sleaping:
+                        return "*Sleeping*";
+                    case TypeOfActivity.Working:
+                        return "Working";
+                    case TypeOfActivity.Relaxing:
+                        return "Time to relax";
+                    case TypeOfActivity.Traveling:
+                        return "You are on the road";
+                    default:
+                        return "Unknown activity.";
+                }
+                break;
+            case 1:
+                switch (type)
+                {
+                    case TypeOfActivity.Eating:
+                        return "Час наповнити шлунок";
+                    case TypeOfActivity.Sleaping:
+                        return "*Сплю*";
+                    case TypeOfActivity.Working:
+                        return "Працюю";
+                    case TypeOfActivity.Relaxing:
+                        return "настав час відпочити";
+                    case TypeOfActivity.Traveling:
+                        return "ви перебуваєте в дорозі";
+                    default:
+                        return "Невідома діяльність.";
+                }
+                break;
+        }
+        return null;
+        
     }
 
 }

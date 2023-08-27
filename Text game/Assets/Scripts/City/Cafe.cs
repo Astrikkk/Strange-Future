@@ -9,6 +9,7 @@ public class Cafe : MonoBehaviour
     public WaitManager WM;
     public GameObject CafeBuyMenu;
     private BuyManager BM;
+    private MassageBox MB;
     private Timer timer;
 
     private CafeItem currentItem;
@@ -20,8 +21,12 @@ public class Cafe : MonoBehaviour
             Player.ChangeHungry(currentItem.AddFood);
             Player.ChangeThirsty(currentItem.AddWater);
             WM.SetTime(currentItem.TimeToEat);
-            WM.SetTime(currentItem.TimeString);
+            WM.SetTimeType(TypeOfActivity.Eating);
             timer.AddHours(1);
+        }
+        else
+        {
+            MB.SendMessageNotEnoughMoney();
         }
         BM.BuymanagerObj.SetActive(false);
     }
@@ -31,6 +36,7 @@ public class Cafe : MonoBehaviour
         WM=GameObject.FindAnyObjectByType<WaitManager>();
         BM = FindObjectOfType<BuyManager>();
         timer = FindObjectOfType<Timer>();
+        MB = FindObjectOfType<MassageBox>();
     }
 
     public void Eat(CafeItem item)
@@ -40,7 +46,7 @@ public class Cafe : MonoBehaviour
         UnityEvent buyEvent = new UnityEvent();
         buyEvent.AddListener(Buy);
         BM.AssignButtonClickEvent(buyEvent);
-        BM.NameOfItemText.text = currentItem.name;
+        BM.NameOfItemText.text = currentItem.name[LanguageManager.LanguageIndex];
         BM.PriceText.text = currentItem.Price.ToString() + "$";
         BM.image.sprite = currentItem.icon;
     }

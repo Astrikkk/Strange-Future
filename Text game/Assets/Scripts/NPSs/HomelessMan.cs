@@ -7,10 +7,12 @@ public class HomelessMan : MonoBehaviour, ISaveable
     public DialogueObj FirstDialoque;
     public DialogueObj DontDistarbeMe;
     public DialogueObj GoAway;
+    public DialogueObj Blueprint;
 
     private DialogueSystem DS;
     private Timer timer;
     private MassageBox MB;
+    private Inventory Inventory;
     private bool firstMeet = true;
 
     private const string FirstMeetKey = "FirstMeetHomelessMan";
@@ -20,6 +22,7 @@ public class HomelessMan : MonoBehaviour, ISaveable
         timer = GameObject.FindObjectOfType<Timer>();
         MB = GameObject.FindObjectOfType<MassageBox>();
         DS = GameObject.FindObjectOfType<DialogueSystem>();
+        Inventory = GameObject.FindObjectOfType<Inventory>();
 
         LoadFirstMeet();
     }
@@ -33,6 +36,11 @@ public class HomelessMan : MonoBehaviour, ISaveable
             firstMeet = false;
             SaveFirstMeet();
         }
+        else if (LaboratoryScript.CanEnter && !LaboratoryScript.HaveBlueprint)
+        {
+            DS.LaunchDialogue(Blueprint);
+            Inventory.AddObj(Inventory.AllExistItems[16]);
+        }
         else if (timer.CurrentHour >= 7 && timer.CurrentHour < 20)
         {
             DS.LaunchDialogue(DontDistarbeMe);
@@ -41,6 +49,7 @@ public class HomelessMan : MonoBehaviour, ISaveable
         {
             DS.LaunchDialogue(GoAway);
         }
+        Save();
     }
 
 

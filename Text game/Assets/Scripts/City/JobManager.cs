@@ -17,22 +17,38 @@ public class JobManager : MonoBehaviour
 
     public void Work(JobObj job)
     {
-        if (job == Player.job)
+        if (Player.Mood < 10)
+        {
+            MB.CantWorkBadMood();
+        }
+        else if (Player.Hungry < 10)
+        {
+            MB.CantWorkHungry();
+        }
+        else if (Player.Thirsty < 10)
+        {
+            MB.CantWorkThirsty();
+        }
+        else if (Player.Sleepy < 10)
+        {
+            MB.CantWorkSleepy();
+        }
+        else if (job == Player.job)
         {
             Player.ChangeMoney(Player.job.salary);
             WM.SetTime(Player.job.TimeOfWorking);
-            WM.SetTime("Working");
+            WM.SetTimeType(TypeOfActivity.Working);
             timer.AddHours(job.HoursWorking);
         }
-        else MB.SendMessage("You are not working here");
+        else MB.NotWorkingHereMessage();
     }
     public void ChooseJob(JobObj job)
     {
-        if (job == Player.job) MB.SendMessage("You are already workinhg here");
+        if (job == Player.job) MB.AlreadyWorkingMessage();
         else
         {
             Player.job = job;
-            MB.SendMessage("Succesfully changed your job to " + job.Name);
+            MB.ChangeTaskSuccessMessage();
         }
     }
 }

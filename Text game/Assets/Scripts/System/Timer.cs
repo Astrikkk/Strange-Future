@@ -21,7 +21,19 @@ public class Timer : MonoBehaviour
     }
     public void ShowData()
     {
-        TimeText.text = "Time: " + CurrentHour.ToString() + " H.";
+        switch (LanguageManager.LanguageIndex)
+        {
+            case 0:
+                TimeText.text = "Time: " + CurrentHour.ToString() + " H.";
+                break;
+            case 1:
+                TimeText.text = "„ас: " + CurrentHour.ToString() + " год.";
+                break;
+            default:
+                TimeText.text = "Time: " + CurrentHour.ToString() + " H.";
+                break;
+        }
+        
     }
 
 

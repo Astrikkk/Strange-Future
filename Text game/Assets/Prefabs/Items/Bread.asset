@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8bd19e3e93f96444b435d97430907ad, type: 3}
   m_Name: Bread
   m_EditorClassIdentifier: 
-  name: Bread
-  description: You can cut this
+  name:
+  - Bread
+  - "\u0425\u043B\u0456\u0431"
+  description:
+  - You can cut it
+  - "\u0422\u0438 \u043C\u043E\u0436\u0435\u0448 \u043F\u043E\u0440\u0456\u0437\u0430\u0442\u0438
+    \u0439\u043E\u0433\u043E"
   icon: {fileID: -2141652786, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
   itemsType: 4
   AddFood: 0

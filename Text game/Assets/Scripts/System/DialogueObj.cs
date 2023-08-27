@@ -6,7 +6,6 @@ using UnityEngine;
 public class DialogueObj : ScriptableObject
 {
     public Sprite BackGround;
-    public List<Sprite> Person;
-    public List<string> Text;
+    public List<DialogueLanguageText> Lanquage;
     public List<InventoryItem> ItemsGiven;
 }

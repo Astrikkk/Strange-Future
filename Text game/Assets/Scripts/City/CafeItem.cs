@@ -6,7 +6,7 @@ using UnityEngine;
 public class CafeItem : ScriptableObject
 {
     public Sprite icon;
-    public new string name;
+    public List<string> name;
     public int Price;
     public int AddFood;
     public int AddWater;

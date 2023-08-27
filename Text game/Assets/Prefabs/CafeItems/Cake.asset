@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Cake
   m_EditorClassIdentifier: 
   icon: {fileID: 640667239, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
-  name: Cake
+  name:
+  - Cake
+  - "\u0422\u043E\u0440\u0442"
   Price: 80
   AddFood: 100
   AddWater: 40

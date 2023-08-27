@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8bd19e3e93f96444b435d97430907ad, type: 3}
   m_Name: Pizza
   m_EditorClassIdentifier: 
-  name: Pizza
-  description: Cut me before eating
+  name:
+  - Pizza
+  - "\u041F\u0456\u0446\u0430 "
+  description:
+  - Cut it
+  - "\u041F\u043E\u0440\u0456\u0436 \u0457\u0457"
   icon: {fileID: -488695851, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
   itemsType: 4
   AddFood: 0

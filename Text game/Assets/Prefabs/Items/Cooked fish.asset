@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8bd19e3e93f96444b435d97430907ad, type: 3}
   m_Name: Cooked fish
   m_EditorClassIdentifier: 
-  name: Cooked fish
-  description: Tasty
+  name:
+  - Cooked fish
+  - "\u0416\u0430\u0440\u0435\u043D\u0430 \u0440\u0438\u0431\u0430"
+  description:
+  - You can eat it
+  - "\u041C\u043E\u0436\u0435\u0448 \u0446\u0435 \u0457\u0441\u0442\u0438"
   icon: {fileID: 1787154923, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
   itemsType: 1
   AddFood: 70

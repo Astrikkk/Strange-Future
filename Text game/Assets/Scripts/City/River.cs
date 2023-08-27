@@ -21,7 +21,7 @@ public class River : MonoBehaviour
 
     public void Swim()
     {
-        MB.SendMessage("You cant swim here, its too dangerous");
+        MB.CannotSwimMessage();
     }
 
     public void Fish()
@@ -39,7 +39,7 @@ public class River : MonoBehaviour
         }
         else
         {
-            MB.SendMessage("You dont have a fishing rod");
+            MB.NoFishingRodMessage();
         }
     }
 }

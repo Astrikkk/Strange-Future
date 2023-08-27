@@ -89,10 +89,14 @@ public class Inventory : MonoBehaviour
                         Debug.Log("Using Ticket");
                         break;
                     case ItemsType.Instrument:
-                        MB.SendMessage("Cant use it now");
+                        MB.CantUseItNowMessage();
                         Debug.Log("Using Instrument");
                         break;
                     case ItemsType.Gun:
+                        Debug.Log("Using Gun");
+                        break;
+                    case ItemsType.BluePrint:
+                        LaboratoryScript.HaveBlueprint = true;
                         Debug.Log("Using Gun");
                         break;
                     default:
@@ -142,8 +146,8 @@ public class Inventory : MonoBehaviour
     {
         if (items.Count > currentItemIndex && items[currentItemIndex] != null)
         {
-            DescriptionText.text = items[currentItemIndex].description;
-            NameText.text = items[currentItemIndex].name;
+            DescriptionText.text = items[currentItemIndex].description[LanguageManager.LanguageIndex];
+            NameText.text = items[currentItemIndex].name[LanguageManager.LanguageIndex];
         }
         else
         {

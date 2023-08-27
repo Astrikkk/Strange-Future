@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8bd19e3e93f96444b435d97430907ad, type: 3}
+  m_Name: Microcircuit 1
+  m_EditorClassIdentifier: 
+  name:
+  - Microcircuit
+  - "\u041C\u0456\u043A\u0440\u043E\u0441\u0445\u0435\u043C\u0430"
+  description:
+  - For Atomic Energy Plasma Reactor
+  - "\u0414\u043B\u044F \u043F\u043B\u0430\u0437\u043C\u043E\u0432\u043E\u0433\u043E
+    \u0440\u0435\u0430\u043A\u0442\u043E\u0440\u0430 \u0430\u0442\u043E\u043C\u043D\u043E\u0457
+    \u0435\u043D\u0435\u0440\u0433\u0456\u0457"
+  icon: {fileID: -20035613, guid: 7ed0ba4fbb9fe1e4bb1de378b49a3cd6, type: 3}
+  itemsType: 4
+  AddFood: 0
+  AddWater: 0

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: HotDog
   m_EditorClassIdentifier: 
   icon: {fileID: 1075273480, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
-  name: HotDog
+  name:
+  - Hotdog
+  - "\u0425\u043E\u0442\u0434\u043E\u0433"
   Price: 30
   AddFood: 35
   AddWater: 5

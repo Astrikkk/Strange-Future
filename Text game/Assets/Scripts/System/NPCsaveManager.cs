@@ -11,25 +11,12 @@ public interface ISaveable
 public class NPCsaveManager : MonoBehaviour
 {
     public List<ISaveable> saveableObjects = new List<ISaveable>();
-    public List<GameObject> gameObjectsToCheck = new List<GameObject>();
 
     private void Awake()
     {
-        CollectSaveableObjects();
+        ISaveable[] saveables = GetComponents<ISaveable>();
+        saveableObjects.AddRange(saveables);
     }
-
-    private void CollectSaveableObjects()
-    {
-        foreach (GameObject gameObjectToCheck in gameObjectsToCheck)
-        {
-            ISaveable saveable = gameObjectToCheck.GetComponent<ISaveable>();
-            if (saveable != null)
-            {
-                saveableObjects.Add(saveable);
-            }
-        }
-    }
-
     public void SaveAllObjects()
     {
         foreach (ISaveable saveableObject in saveableObjects)

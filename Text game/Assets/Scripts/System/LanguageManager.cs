@@ -17,6 +17,13 @@ public class LanguageManager : MonoBehaviour
     {
         LanguageIndex = a;
         SaveLanguage();
+
+        List<TextLanguage> textLanguageComponents = new List<TextLanguage>(FindObjectsOfType<TextLanguage>());
+
+        foreach (TextLanguage tlComponent in textLanguageComponents)
+        {
+            tlComponent.ChangeText();
+        }
     }
 
     public void SaveLanguage()

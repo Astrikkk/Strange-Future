@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     public GameObject Inventory;
     public WaitManager WM;
     public City city;
+    private GameManager GM;
 
 
     public int currentMenu = 0;
@@ -24,6 +25,7 @@ public class MenuManager : MonoBehaviour
             menues[i].Menu.SetActive(false);
         }
         menues[currentMenu].Menu.SetActive(true);
+        GM = GameObject.FindObjectOfType<GameManager>();
     }
     public void ChangeMenu(int a)
     {
@@ -40,6 +42,7 @@ public class MenuManager : MonoBehaviour
         }
         currentMenu = a;
         IM.boxes[IM.currentBox].NameOfBox.text = menues[a].NameOfBox;
+        GM.SavePlayerData();
     }
     public void OpenCloseInventory()
     {

@@ -11,19 +11,32 @@ public class Shop : MonoBehaviour
     private Inventory inventory;
     public BuyManager BM;
     private int numberOdItem;
+    private MassageBox MB;
 
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
         BM = FindObjectOfType<BuyManager>();
+        MB = FindObjectOfType<MassageBox>();
     }
 
     public void Choose()
     {
-        if (Player.Money >= price[numberOdItem] && inventory.items.Count < inventory.Capacity)
+        if (Player.Money >= price[numberOdItem])
         {
-            Player.Money -= price[numberOdItem];
-            inventory.AddObj(items[numberOdItem]);
+            if (inventory.items.Count < inventory.Capacity)
+            {
+                Player.Money -= price[numberOdItem];
+                inventory.AddObj(items[numberOdItem]);
+            }
+            else
+            {
+                MB.NoSpaceInInventoryMessage();
+            }
+        }
+        else
+        {
+            MB.SendMessageNotEnoughMoney();
         }
         BM.BuymanagerObj.SetActive(false);
     }
@@ -36,7 +49,7 @@ public class Shop : MonoBehaviour
         UnityEvent buyEvent = new UnityEvent();
         buyEvent.AddListener(Choose);
         BM.AssignButtonClickEvent(buyEvent);
-        BM.NameOfItemText.text = items[a].name;
+        BM.NameOfItemText.text = items[a].name[LanguageManager.LanguageIndex];
         BM.PriceText.text = price[a].ToString() + "$";
         BM.image.sprite = items[a].icon;
     }

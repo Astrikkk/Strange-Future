@@ -27,17 +27,17 @@ public class DialogueSystem : MonoBehaviour
         currentDialogue = LaunchedDialogue;
         DialogMenu.SetActive(true);
         BackGround.sprite = currentDialogue.BackGround;
-        Speaker.sprite = currentDialogue.Person[0];
-        DialogueText.text = currentDialogue.Text[0];
+        Speaker.sprite = currentDialogue.Lanquage[LanguageManager.LanguageIndex].Person[0];
+        DialogueText.text = currentDialogue.Lanquage[LanguageManager.LanguageIndex].Text[0];
     }
 
     public void Next()
     {
-        if (currentDialogue.Text.Count > DialogueIndex + 1)
+        if (currentDialogue.Lanquage[LanguageManager.LanguageIndex].Text.Count > DialogueIndex + 1)
         {
             DialogueIndex++;
-            Speaker.sprite = currentDialogue.Person[DialogueIndex];
-            DialogueText.text = currentDialogue.Text[DialogueIndex];
+            Speaker.sprite = currentDialogue.Lanquage[LanguageManager.LanguageIndex].Person[DialogueIndex];
+            DialogueText.text = currentDialogue.Lanquage[LanguageManager.LanguageIndex].Text[DialogueIndex];
         }
         else
         {

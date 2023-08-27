@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8bd19e3e93f96444b435d97430907ad, type: 3}
   m_Name: Sandwich
   m_EditorClassIdentifier: 
-  name: Sandwich
-  description: How did you make it
+  name:
+  - Sandwich
+  - "\u0421\u0435\u043D\u0434\u0432\u0456\u0447"
+  description:
+  - Eat me
+  - "\u0417'\u0457\u0436 \u043C\u0435\u043D\u0435"
   icon: {fileID: -34943471, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
   itemsType: 1
   AddFood: 30

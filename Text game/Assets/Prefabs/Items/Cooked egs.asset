@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8bd19e3e93f96444b435d97430907ad, type: 3}
   m_Name: Cooked egs
   m_EditorClassIdentifier: 
-  name: Egs
-  description: Now you can eat it
+  name:
+  - Cooked egs
+  - "\u041F\u0440\u0438\u0433\u043E\u0442\u043E\u0432\u043B\u0435\u043D\u0456 \u044F\u0439\u0446\u044F"
+  description:
+  - You can eat it
+  - "\u041C\u043E\u0436\u0435\u0448 \u0446\u0435 \u0437'\u0457\u0441\u0442\u0438"
   icon: {fileID: 700444816, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
   itemsType: 1
   AddFood: 60

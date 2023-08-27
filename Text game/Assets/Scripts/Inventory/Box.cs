@@ -106,8 +106,8 @@ public class Box : MonoBehaviour
         {
             if (items.Count > currentItemIndex && items[currentItemIndex] != null)
             {
-                DescriptionText.text = items[currentItemIndex].description;
-                NameText.text = items[currentItemIndex].name;
+                DescriptionText.text = items[currentItemIndex].description[LanguageManager.LanguageIndex];
+                NameText.text = items[currentItemIndex].name[LanguageManager.LanguageIndex];
             }
             else
             {

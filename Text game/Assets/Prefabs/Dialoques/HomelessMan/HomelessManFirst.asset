@@ -13,22 +13,7 @@ MonoBehaviour:
   m_Name: HomelessManFirst
   m_EditorClassIdentifier: 
   BackGround: {fileID: 0}
-  Person:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Text:
-  - Hey who are you?
-  - Don't you see? just a common homeless man.
-  - Oh, okey
-  - Did you see something strange last night
-  - No, what heppened?
-  - Nithing special, just 38 peaople were arrested
-  - What?
-  - Now go away, they dont need to see us together
+  Lanquage:
+  - {fileID: 11400000, guid: ee45b76dd3270eb48a1af0dc4173ecea, type: 2}
+  - {fileID: 11400000, guid: 06912be9e0b251a44950c10701f68e15, type: 2}
   ItemsGiven: []

@@ -9,14 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 739df451c7b848842899322571e707c3, type: 3}
-  m_Name: HomelessManDontDisturb
+  m_Script: {fileID: 11500000, guid: a4d7623c45677e947989ce8695d7922e, type: 3}
+  m_Name: English Welcome
   m_EditorClassIdentifier: 
-  BackGround: {fileID: 0}
   Person:
   - {fileID: 0}
-  - {fileID: 0}
   Text:
-  - Hey, What the hell do you need,  let me sleep a bit pls
-  - Okey
-  ItemsGiven: []
+  - From now on, you can come to the laboratory. Your task is to bring all the necessary
+    components. However, first, you need to obtain the time machine blueprint and
+    study it to find out which components you require.

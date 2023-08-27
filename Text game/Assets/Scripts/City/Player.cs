@@ -127,14 +127,39 @@ public class Player : MonoBehaviour
 
     private void UpdateStatsText()
     {
-        HPtext.text = HP.ToString() + " HP";
-        HungryText.text = Hungry.ToString() + " Hungry";
-        ThirstyText.text = Thirsty.ToString() + " Thirsty";
-        EnergyText.text = Energy.ToString() + " Energy";
-        HealthText.text = Health.ToString() + " Health";
-        SleepyText.text = Sleepy.ToString() + " Sleepy";
-        MoodText.text = Mood.ToString() + " Mood";
-        MoneyText.text = Money.ToString() + " Money";
+        switch (LanguageManager.LanguageIndex)
+        {
+            case 0:
+                HPtext.text = HP.ToString() + " HP";
+                HungryText.text = Hungry.ToString() + " Hungry";
+                ThirstyText.text = Thirsty.ToString() + " Thirsty";
+                EnergyText.text = Energy.ToString() + " Energy";
+                HealthText.text = Health.ToString() + " Health";
+                SleepyText.text = Sleepy.ToString() + " Sleepy";
+                MoodText.text = Mood.ToString() + " Mood";
+                MoneyText.text = Money.ToString() + " $";
+                break;
+            case 1:
+                HPtext.text = HP.ToString() + " ХП";
+                HungryText.text = Hungry.ToString() + " Голод";
+                ThirstyText.text = Thirsty.ToString() + " Спрага";
+                EnergyText.text = Energy.ToString() + " Енергія";
+                HealthText.text = Health.ToString() + " Здоров'я";
+                SleepyText.text = Sleepy.ToString() + " Сонність";
+                MoodText.text = Mood.ToString() + " Настрій";
+                MoneyText.text = Money.ToString() + " $";
+                break;
+            default:
+                HPtext.text = HP.ToString() + " HP";
+                HungryText.text = Hungry.ToString() + " Hungry";
+                ThirstyText.text = Thirsty.ToString() + " Thirsty";
+                EnergyText.text = Energy.ToString() + " Energy";
+                HealthText.text = Health.ToString() + " Health";
+                SleepyText.text = Sleepy.ToString() + " Sleepy";
+                MoodText.text = Mood.ToString() + " Mood";
+                MoneyText.text = Money.ToString() + " $";
+                break;
+        }
     }
 
 

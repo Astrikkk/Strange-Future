@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
 public class LaboratoryData
@@ -16,11 +17,12 @@ public class LaboratoryScript : MonoBehaviour
 {
     public List<InventoryItem> RequiredItems;
     private Inventory inventory;
-    public bool HaveBlueprint;
+    public static bool HaveBlueprint;
     private MassageBox MB;
-    public bool CanEnter;
+    public static bool CanEnter;
     private MenuManager MM;
     private City city;
+    public TextMeshProUGUI detailsText;
 
 
 
@@ -36,12 +38,12 @@ public class LaboratoryScript : MonoBehaviour
     {
         if (CanEnter)
         {
-            MM.ChangeMenu(8);
-            city.Travel(9);
+            MM.ChangeMenu(10);
+            city.Travel(8);
         }
         else
         {
-            MB.SendMessage("You cant enter this place !!");
+            MB.CannotEnterMessage();
         }
     }
 
@@ -65,7 +67,7 @@ public class LaboratoryScript : MonoBehaviour
         }
         else
         {
-            MB.SendMessage("You dont have a blueprint !");
+            MB.NoBlueprintMessage();
         }
     }
     public void RemoveRequiredItem(InventoryItem item)
@@ -76,6 +78,19 @@ public class LaboratoryScript : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        UpdateDetailsText();
+    }
+
+    private void UpdateDetailsText()
+    {
+        detailsText.text = "Required Items:\n";
+        foreach (InventoryItem requiredItem in RequiredItems)
+        {
+            detailsText.text += requiredItem.name[LanguageManager.LanguageIndex] + "\n";
+        }
+    }
 
 
     public void SaveData()

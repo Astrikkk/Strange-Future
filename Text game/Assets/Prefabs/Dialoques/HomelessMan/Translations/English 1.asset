@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d7623c45677e947989ce8695d7922e, type: 3}
+  m_Name: English 1
+  m_EditorClassIdentifier: 
+  Person:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Text:
+  - Hello, I can you help me?
+  - What do you need?
+  - Tell me how to go to laboratory
+  - Why do you need this information?
+  - I want to work here
+  - Go to the river than turn right and you will be there, but remember, they are
+    always watching us

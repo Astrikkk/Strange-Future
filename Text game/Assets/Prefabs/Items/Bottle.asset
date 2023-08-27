@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8bd19e3e93f96444b435d97430907ad, type: 3}
   m_Name: Bottle
   m_EditorClassIdentifier: 
-  name: Bottle
-  description: It's empty
+  name:
+  - Bottle
+  - "\u041F\u043B\u044F\u0436\u043A\u0430"
+  description:
+  - It's empty
+  - "\u0412\u043E\u043D\u0430 \u043F\u0443\u0441\u0442\u0430"
   icon: {fileID: 2045609805, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
   itemsType: 4
+  AddFood: 0
+  AddWater: 0

@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8bd19e3e93f96444b435d97430907ad, type: 3}
   m_Name: Piece of sousage
   m_EditorClassIdentifier: 
-  name: Piece of sousage
-  description: Eat me
+  name:
+  - Piece of sousage
+  - "\u041A\u0443\u0441\u043E\u0447\u043E\u043A \u043A\u043E\u0432\u0431\u0430\u0441\u0438"
+  description:
+  - Make a sanwich
+  - "\u041F\u0440\u0438\u0433\u043E\u0442\u0443\u0439 \u0441\u0435\u043D\u0434\u0432\u0456\u0447"
   icon: {fileID: -202170447, guid: ac60f88b7e23b7b44b8cbef544a6bfe6, type: 3}
   itemsType: 1
   AddFood: 10
