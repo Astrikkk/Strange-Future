@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d7623c45677e947989ce8695d7922e, type: 3}
+  m_Name: FirstMeetENG
+  m_EditorClassIdentifier: 
+  Person:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Text:
+  - Are you looking for components? I can find everything for you, but it won't be
+    free. The system costs its coins.
+  - Yes, I would like these components.
+  - Interesting, very interesting. This will cost you 1200 evergreens.

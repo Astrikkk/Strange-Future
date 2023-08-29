@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Person:
   - {fileID: 0}
+  - {fileID: 21300000, guid: 4d063fb8d05ddf843b907f5e3a432eff, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 4d063fb8d05ddf843b907f5e3a432eff, type: 3}
   Text:
   - "\u041F\u0440\u0438\u0432\u0456\u0442, \u0445\u043E\u0442\u0456\u0432 \u0431\u0438
     \u0437\u0430\u043F\u0438\u0442\u0430\u0442\u0438 \u0434\u0435 \u043C\u043E\u0436\u043D\u0430

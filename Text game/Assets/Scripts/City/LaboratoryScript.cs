@@ -51,18 +51,23 @@ public class LaboratoryScript : MonoBehaviour
     {
         if (HaveBlueprint)
         {
-            for (int i = 0; i < inventory.items.Count; i++)
-            {
-                for (int j = 0; j < RequiredItems.Count; j++)
-                {
-                    InventoryItem requiredItem = RequiredItems[j];
+            bool hasRequiredItem = false;
 
-                    if (inventory.HasItem(requiredItem))
-                    {
-                        inventory.RemoveItem(requiredItem);
-                        RemoveRequiredItem(requiredItem);
-                    }
+            for (int j = 0; j < RequiredItems.Count; j++)
+            {
+                InventoryItem requiredItem = RequiredItems[j];
+
+                if (inventory.HasItem(requiredItem))
+                {
+                    hasRequiredItem = true;
+                    inventory.RemoveItem(requiredItem);
+                    RemoveRequiredItem(requiredItem);
                 }
+            }
+
+            if (!hasRequiredItem)
+            {
+                MB.DontHavetimeMachineItemsMessage();
             }
         }
         else
@@ -70,6 +75,7 @@ public class LaboratoryScript : MonoBehaviour
             MB.NoBlueprintMessage();
         }
     }
+
     public void RemoveRequiredItem(InventoryItem item)
     {
         if (RequiredItems.Contains(item))
@@ -83,15 +89,15 @@ public class LaboratoryScript : MonoBehaviour
         UpdateDetailsText();
     }
 
-    private void UpdateDetailsText()
+    public void UpdateDetailsText()
     {
-        detailsText.text = "Required Items:\n";
+        string itemsText = "";
         foreach (InventoryItem requiredItem in RequiredItems)
         {
-            detailsText.text += requiredItem.name[LanguageManager.LanguageIndex] + "\n";
+            itemsText += requiredItem.name[LanguageManager.LanguageIndex] + "\n";
         }
+        detailsText.text = itemsText;
     }
-
 
     public void SaveData()
     {

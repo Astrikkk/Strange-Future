@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Guard : MonoBehaviour, ISaveable
+public class Guard : MonoBehaviour
 {
     public DialogueObj FirstDialoque;
     public DialogueObj GoAway;
@@ -20,22 +20,20 @@ public class Guard : MonoBehaviour, ISaveable
         timer = GameObject.FindObjectOfType<Timer>();
         MB = GameObject.FindObjectOfType<MassageBox>();
         DS = GameObject.FindObjectOfType<DialogueSystem>();
-
-        LoadFirstMeet();
+        LoadData();
     }
-
 
     public void Talk()
     {
         if (LaboratoryScript.CanEnter)
         {
-            DS.LaunchDialogue(FirstDialoque);
-            firstMeet = false;
-            SaveFirstMeet();
+            DS.LaunchDialogue(Welcome);
         }
         else if (firstMeet)
         {
-            DS.LaunchDialogue(Welcome);
+            DS.LaunchDialogue(FirstDialoque);
+            firstMeet = false;
+            SaveData();
         }
         else
         {
@@ -43,10 +41,7 @@ public class Guard : MonoBehaviour, ISaveable
         }
     }
 
-
-
-
-    private void LoadFirstMeet()
+    public void LoadData()
     {
         if (PlayerPrefs.HasKey(FirstMeetKey))
         {
@@ -55,23 +50,7 @@ public class Guard : MonoBehaviour, ISaveable
         }
     }
 
-    private void SaveFirstMeet()
-    {
-        int firstMeetValue = firstMeet ? 1 : 0;
-        PlayerPrefs.SetInt(FirstMeetKey, firstMeetValue);
-        PlayerPrefs.Save();
-    }
-
-    public void Save()
-    {
-        if (PlayerPrefs.HasKey(FirstMeetKey))
-        {
-            int firstMeetValue = PlayerPrefs.GetInt(FirstMeetKey);
-            firstMeet = firstMeetValue == 1;
-        }
-    }
-
-    public void Load()
+    public void SaveData()
     {
         int firstMeetValue = firstMeet ? 1 : 0;
         PlayerPrefs.SetInt(FirstMeetKey, firstMeetValue);

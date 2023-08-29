@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739df451c7b848842899322571e707c3, type: 3}
+  m_Name: Buying
+  m_EditorClassIdentifier: 
+  BackGround: {fileID: 0}
+  Lanquage:
+  - {fileID: 11400000, guid: cdcb7b9163bfe91418f8e116bf0d3a90, type: 2}
+  - {fileID: 11400000, guid: c3137f65e7ebda64d8e30e208ced340d, type: 2}
+  ItemsGiven: []

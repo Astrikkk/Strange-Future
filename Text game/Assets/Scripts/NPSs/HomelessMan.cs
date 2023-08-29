@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomelessMan : MonoBehaviour, ISaveable
+public class HomelessMan : MonoBehaviour
 {
     public DialogueObj FirstDialoque;
     public DialogueObj DontDistarbeMe;
@@ -23,8 +23,6 @@ public class HomelessMan : MonoBehaviour, ISaveable
         MB = GameObject.FindObjectOfType<MassageBox>();
         DS = GameObject.FindObjectOfType<DialogueSystem>();
         Inventory = GameObject.FindObjectOfType<Inventory>();
-
-        LoadFirstMeet();
     }
 
 
@@ -49,7 +47,6 @@ public class HomelessMan : MonoBehaviour, ISaveable
         {
             DS.LaunchDialogue(GoAway);
         }
-        Save();
     }
 
 
@@ -71,7 +68,7 @@ public class HomelessMan : MonoBehaviour, ISaveable
         PlayerPrefs.Save();
     }
 
-    public void Save()
+    public void SaveData()
     {
         if (PlayerPrefs.HasKey(FirstMeetKey))
         {
@@ -80,7 +77,7 @@ public class HomelessMan : MonoBehaviour, ISaveable
         }
     }
 
-    public void Load()
+    public void LoadData()
     {
         int firstMeetValue = firstMeet ? 1 : 0;
         PlayerPrefs.SetInt(FirstMeetKey, firstMeetValue);

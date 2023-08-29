@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: English 1
   m_EditorClassIdentifier: 
   Person:
+  - {fileID: 21300000, guid: 84c76892813ab3344b4707c7c7cb6930, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 84c76892813ab3344b4707c7c7cb6930, type: 3}
   - {fileID: 0}
   Text:
   - You cant enter this place!

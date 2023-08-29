@@ -2,34 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISaveable
-{
-    void Save();
-    void Load();
-}
-
 public class NPCsaveManager : MonoBehaviour
 {
-    public List<ISaveable> saveableObjects = new List<ISaveable>();
+    public Ministr ministr;
+    public HomelessMan homelessMan;
+    public Guard guard;
+    public Scientist scientist;
 
-    private void Awake()
+    public void SaveAllNPC()
     {
-        ISaveable[] saveables = GetComponents<ISaveable>();
-        saveableObjects.AddRange(saveables);
-    }
-    public void SaveAllObjects()
-    {
-        foreach (ISaveable saveableObject in saveableObjects)
-        {
-            saveableObject.Save();
-        }
+        ministr.SaveData();
+        homelessMan.SaveData();
+        guard.SaveData();
+        scientist.SaveData();
     }
 
-    public void LoadAllObjects()
+    public void LoadAllNPC()
     {
-        foreach (ISaveable saveableObject in saveableObjects)
-        {
-            saveableObject.Load();
-        }
+        ministr.LoadData();
+        homelessMan.LoadData();
+        guard.LoadData();
+        scientist.LoadData();
     }
 }

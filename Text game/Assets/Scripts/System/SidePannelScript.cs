@@ -22,6 +22,6 @@ public class SidePannelScript : MonoBehaviour
 
     private void Update()
     {
-        
+
     }
 }

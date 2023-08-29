@@ -1,11 +1,10 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using TMPro;
 
 public class MassageBox : MonoBehaviour
 {
     public GameObject Box;
     public TextMeshProUGUI text;
-
 
     public void SendMessageNotEnoughMoney()
     {
@@ -15,7 +14,7 @@ public class MassageBox : MonoBehaviour
                 SendMessagebar("Not enough money");
                 break;
             case 1:
-                SendMessagebar("Недостатньо грошей");
+                SendMessagebar("РќРµРґРѕСЃС‚Р°С‚РЅСЊРѕ РіСЂРѕС€РµР№");
                 break;
         }
     }
@@ -28,7 +27,7 @@ public class MassageBox : MonoBehaviour
                 SendMessagebar("Successfully changed the job");
                 break;
             case 1:
-                SendMessagebar("Успішно змінено роботу");
+                SendMessagebar("РЈСЃРїС–С€РЅРѕ Р·РјС–РЅРёР»Рё СЂРѕР±РѕС‚Сѓ");
                 break;
         }
     }
@@ -41,7 +40,7 @@ public class MassageBox : MonoBehaviour
                 SendMessagebar("You are already working here");
                 break;
             case 1:
-                SendMessagebar("Ти вже тут працюєш");
+                SendMessagebar("Р’Рё РІР¶Рµ РїСЂР°С†СЋС”С‚Рµ С‚СѓС‚");
                 break;
         }
     }
@@ -54,7 +53,7 @@ public class MassageBox : MonoBehaviour
                 SendMessagebar("You are not working here");
                 break;
             case 1:
-                SendMessagebar("Ти тут не працюєш");
+                SendMessagebar("Р’Рё РЅРµ РїСЂР°С†СЋС”С‚Рµ С‚СѓС‚");
                 break;
         }
     }
@@ -67,7 +66,7 @@ public class MassageBox : MonoBehaviour
                 SendMessagebar("You cannot enter here");
                 break;
             case 1:
-                SendMessagebar("Ти не можеш увійти сюди");
+                SendMessagebar("Р’Р°Рј РЅРµ РґРѕР·РІРѕР»РµРЅРѕ СЃСЋРґРё РІС…РѕРґРёС‚Рё");
                 break;
         }
     }
@@ -80,7 +79,7 @@ public class MassageBox : MonoBehaviour
                 SendMessagebar("You don't have the blueprint");
                 break;
             case 1:
-                SendMessagebar("У тебе немає схеми");
+                SendMessagebar("РЈ РІР°СЃ РЅРµРјР°С” РјР°Р»СЋРЅРєР°");
                 break;
         }
     }
@@ -93,7 +92,7 @@ public class MassageBox : MonoBehaviour
                 SendMessagebar("You cannot swim here, it's too dangerous");
                 break;
             case 1:
-                SendMessagebar("Ти не можеш тут плавати, надто небезпечно");
+                SendMessagebar("Р’Рё РЅРµ РјРѕР¶РµС‚Рµ РїР»Р°РІР°С‚Рё С‚СѓС‚, С†Рµ РЅР°РґС‚Рѕ РЅРµР±РµР·РїРµС‡РЅРѕ");
                 break;
         }
     }
@@ -106,7 +105,7 @@ public class MassageBox : MonoBehaviour
                 SendMessagebar("You don't have a fishing rod");
                 break;
             case 1:
-                SendMessagebar("У тебе немає рибальської вудочки");
+                SendMessagebar("РЈ РІР°СЃ РЅРµРјР°С” РІСѓРґРєРё РґР»СЏ СЂРёР±РѕР»РѕРІР»С–");
                 break;
         }
     }
@@ -119,7 +118,7 @@ public class MassageBox : MonoBehaviour
                 SendMessagebar("No space available in the inventory");
                 break;
             case 1:
-                SendMessagebar("Немає місця в інвентарі");
+                SendMessagebar("РќРµРјР°С” РјС–СЃС†СЏ РІ С–РЅРІРµРЅС‚Р°СЂС–");
                 break;
         }
     }
@@ -129,58 +128,74 @@ public class MassageBox : MonoBehaviour
         switch (LanguageManager.LanguageIndex)
         {
             case 0:
-                SendMessagebar("Cantt use it now");
+                SendMessagebar("Can't use it now");
                 break;
             case 1:
-                SendMessagebar("Не можу це використати зараз");
+                SendMessagebar("Р—Р°СЂР°Р· С†Рµ РЅРµ РјРѕР¶РЅР° РІРёРєРѕСЂРёСЃС‚РѕРІСѓРІР°С‚Рё");
                 break;
         }
     }
+
     public void CantWorkBadMood()
     {
         switch (LanguageManager.LanguageIndex)
         {
             case 0:
-                SendMessagebar("I cant work when I'm in bad mood");
+                SendMessagebar("I can't work when I'm in a bad mood");
                 break;
             case 1:
-                SendMessagebar("Я не можу працювати з поганим настроєм");
+                SendMessagebar("РЇ РЅРµ РјРѕР¶Сѓ РїСЂР°С†СЋРІР°С‚Рё, РєРѕР»Рё СЏ РІ РїРѕРіР°РЅРѕРјСѓ РЅР°СЃС‚СЂРѕС—");
                 break;
         }
     }
+
     public void CantWorkHungry()
     {
         switch (LanguageManager.LanguageIndex)
         {
             case 0:
-                SendMessagebar("I cant work when I'm hungry");
+                SendMessagebar("I can't work when I'm hungry");
                 break;
             case 1:
-                SendMessagebar("Я не можу працювати коли я голодний");
+                SendMessagebar("РЇ РЅРµ РјРѕР¶Сѓ РїСЂР°С†СЋРІР°С‚Рё, РєРѕР»Рё СЏ РіРѕР»РѕРґРЅРёР№");
                 break;
         }
     }
+
     public void CantWorkThirsty()
     {
         switch (LanguageManager.LanguageIndex)
         {
             case 0:
-                SendMessagebar("I cant work when I'm thirsty");
+                SendMessagebar("I can't work when I'm thirsty");
                 break;
             case 1:
-                SendMessagebar("Я не можу працювати коли я хочу пити");
+                SendMessagebar("РЇ РЅРµ РјРѕР¶Сѓ РїСЂР°С†СЋРІР°С‚Рё, РєРѕР»Рё РјРµРЅС– С…РѕС‡РµС‚СЊСЃСЏ РїРёС‚Рё");
                 break;
         }
     }
+
     public void CantWorkSleepy()
     {
         switch (LanguageManager.LanguageIndex)
         {
             case 0:
-                SendMessagebar("I cant work when I'm want to sleep");
+                SendMessagebar("I can't work when I want to sleep");
                 break;
             case 1:
-                SendMessagebar("Я не можу працювати коли я хочу спати");
+                SendMessagebar("РЇ РЅРµ РјРѕР¶Сѓ РїСЂР°С†СЋРІР°С‚Рё, РєРѕР»Рё РјРµРЅС– С…РѕС‡РµС‚СЊСЃСЏ СЃРїР°С‚Рё");
+                break;
+        }
+    }
+     public void DontHavetimeMachineItemsMessage()
+    {
+        switch (LanguageManager.LanguageIndex)
+        {
+            case 0:
+                SendMessagebar("I don't have any parts of time machine");
+                break;
+            case 1:
+                SendMessagebar("РЇ РЅРµ РјР°СЋ Р¶РѕРґРЅРѕС— Р·Р°РїС‡Р°СЃС‚РёРЅРё РґР»СЏ РјР°С€РёРЅРё С‡Р°СЃСѓ");
                 break;
         }
     }

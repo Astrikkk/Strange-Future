@@ -1,9 +1,9 @@
-using System;
+п»їusing System;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 
-public enum TypeOfActivity {Eating, Sleaping, Working, Relaxing, Traveling }
+public enum TypeOfActivity { Eating, Sleaping, Working, Relaxing, Traveling }
 
 public class WaitManager : MonoBehaviour
 {
@@ -95,22 +95,22 @@ public class WaitManager : MonoBehaviour
                 switch (type)
                 {
                     case TypeOfActivity.Eating:
-                        return "Час наповнити шлунок";
+                        return "Г—Г Г± Г­Г ГЇГ®ГўГ­ГЁГІГЁ ГёГ«ГіГ­Г®ГЄ";
                     case TypeOfActivity.Sleaping:
-                        return "*Сплю*";
+                        return "*Г‘ГЇГ«Гѕ*";
                     case TypeOfActivity.Working:
-                        return "Працюю";
+                        return "ГЏГ°Г Г¶ГѕГѕ";
                     case TypeOfActivity.Relaxing:
-                        return "настав час відпочити";
+                        return "Г­Г Г±ГІГ Гў Г·Г Г± ГўВіГ¤ГЇГ®Г·ГЁГІГЁ";
                     case TypeOfActivity.Traveling:
-                        return "ви перебуваєте в дорозі";
+                        return "ГўГЁ ГЇГҐГ°ГҐГЎГіГўГ ВєГІГҐ Гў Г¤Г®Г°Г®Г§Ві";
                     default:
-                        return "Невідома діяльність.";
+                        return "ГЌГҐГўВіГ¤Г®Г¬Г  Г¤ВіГїГ«ГјГ­ВіГ±ГІГј.";
                 }
                 break;
         }
         return null;
-        
+
     }
 
 }

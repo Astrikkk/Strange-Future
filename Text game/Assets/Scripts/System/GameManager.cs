@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
     public MenuManager MM;
     public City city;
     public Timer timer;
+    public NPCsaveManager NPCsave;
     public bool NeedDoResetData;
     private LaboratoryScript Lab;
-    private NPCsaveManager NPCsave;
     private LanguageManager Language;
 
     private void Awake()
@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
         Lab = FindObjectOfType<LaboratoryScript>();
         MM = gameObject.GetComponent<MenuManager>();
         timer = gameObject.GetComponent<Timer>();
-        NPCsave = gameObject.GetComponent<NPCsaveManager>();
         Language = gameObject.GetComponent<LanguageManager>();
         LoadResetStatus();
         if (NeedDoResetData == true)
@@ -41,7 +40,7 @@ public class GameManager : MonoBehaviour
         city.SaveData();
         timer.SaveData();
         Lab.SaveData();
-        NPCsave.SaveAllObjects();
+        NPCsave.SaveAllNPC();
         Language.SaveLanguage();
         SaveResetStatus();
     }
@@ -54,7 +53,7 @@ public class GameManager : MonoBehaviour
         city.LoadData();
         timer.LoadData();
         Lab.LoadData();
-        NPCsave.LoadAllObjects();
+        NPCsave.LoadAllNPC();
         Language.LoadLanguage();
     }
 

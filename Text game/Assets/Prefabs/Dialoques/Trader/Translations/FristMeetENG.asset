@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d7623c45677e947989ce8695d7922e, type: 3}
+  m_Name: FristMeetENG
+  m_EditorClassIdentifier: 
+  Person:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Text:
+  - The finest components for second-generation atomic vehicles are only available
+    from me.
+  - I've heard you can buy a few things from this list at your place.
+  - I don't understand, I only have parts for vehicles.
+  - I'm not from the government; I need these parts for... uh, a confidential project.
+  - My friend, I don't want to get involved in these matters. It's better you go
+    your own way.
+  - I promise you won't encounter me again.
+  - Fine, I need to get rid of this hassle anyway.

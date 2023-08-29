@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using TMPro;
 
 public class Timer : MonoBehaviour
@@ -27,13 +27,13 @@ public class Timer : MonoBehaviour
                 TimeText.text = "Time: " + CurrentHour.ToString() + " H.";
                 break;
             case 1:
-                TimeText.text = "×àñ: " + CurrentHour.ToString() + " ãîä.";
+                TimeText.text = "Ã—Ã Ã±: " + CurrentHour.ToString() + " Ã£Ã®Ã¤.";
                 break;
             default:
                 TimeText.text = "Time: " + CurrentHour.ToString() + " H.";
                 break;
         }
-        
+
     }
 
 
@@ -51,7 +51,7 @@ public class Timer : MonoBehaviour
         if (PlayerPrefs.HasKey(TimerKey))
         {
             CurrentHour = PlayerPrefs.GetInt(TimerKey);
-        Debug.Log("Timer not loaded");
+            Debug.Log("Timer not loaded");
         }
         Debug.Log("Timer loaded");
     }

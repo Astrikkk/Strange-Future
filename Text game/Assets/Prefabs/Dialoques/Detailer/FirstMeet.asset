@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739df451c7b848842899322571e707c3, type: 3}
+  m_Name: FirstMeet
+  m_EditorClassIdentifier: 
+  BackGround: {fileID: 0}
+  Lanquage:
+  - {fileID: 11400000, guid: c276013c0f9761c4aaabbb9f82f33d9e, type: 2}
+  - {fileID: 11400000, guid: 47e78a357e6c60846961e64275bf138e, type: 2}
+  ItemsGiven:
+  - {fileID: 11400000, guid: 9ddc6a2f628bf434fbae2bf99dcf5576, type: 2}
+  - {fileID: 11400000, guid: 1459439b25fa52f47be384dfc508cc80, type: 2}

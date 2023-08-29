@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ministr : MonoBehaviour, ISaveable
+public class Ministr : MonoBehaviour
 {
     public DialogueObj FirstDialoque;
     public DialogueObj GoAway;
@@ -22,8 +22,6 @@ public class Ministr : MonoBehaviour, ISaveable
         timer = GameObject.FindObjectOfType<Timer>();
         MB = GameObject.FindObjectOfType<MassageBox>();
         DS = GameObject.FindObjectOfType<DialogueSystem>();
-
-        LoadData();
     }
 
     public void Talk()
@@ -32,7 +30,6 @@ public class Ministr : MonoBehaviour, ISaveable
         {
             DS.LaunchDialogue(FirstDialoque);
             firstMeet = false;
-            SaveData();
         }
         else if (!firstMeet && secondMeet && timer.CurrentHour == 0 && !LaboratoryScript.CanEnter)
         {
@@ -46,14 +43,14 @@ public class Ministr : MonoBehaviour, ISaveable
         }
     }
 
-    void ISaveable.Save()
+    public void SaveData()
     {
         PlayerPrefs.SetInt(FirstMeetKey, firstMeet ? 1 : 0);
         PlayerPrefs.SetInt(SecondMeetKey, secondMeet ? 1 : 0);
         PlayerPrefs.Save();
     }
 
-    void ISaveable.Load()
+    public void LoadData()
     {
         if (PlayerPrefs.HasKey(FirstMeetKey))
         {
@@ -66,17 +63,5 @@ public class Ministr : MonoBehaviour, ISaveable
             int secondMeetValue = PlayerPrefs.GetInt(SecondMeetKey);
             secondMeet = secondMeetValue == 1;
         }
-    }
-
-    private void SaveData()
-    {
-        ISaveable saveable = this;
-        saveable.Save();
-    }
-
-    private void LoadData()
-    {
-        ISaveable saveable = this;
-        saveable.Load();
     }
 }
