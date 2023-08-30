@@ -39,6 +39,11 @@ public class JobManager : MonoBehaviour
             WM.SetTime(Player.job.TimeOfWorking);
             WM.SetTimeType(TypeOfActivity.Working);
             timer.AddHours(job.HoursWorking);
+            Player.ChangeEnergy(-50);
+            Player.ChangeHungry(-60);
+            Player.ChangeThirsty(-40);
+            Player.ChangeMood(-30);
+            Player.ChangeSleepy(-50);
         }
         else MB.NotWorkingHereMessage();
     }

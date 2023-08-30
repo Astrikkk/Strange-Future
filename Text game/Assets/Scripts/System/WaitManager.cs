@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 
-public enum TypeOfActivity { Eating, Sleaping, Working, Relaxing, Traveling }
+public enum TypeOfActivity { Eating, Sleeping, Working, Relaxing, Traveling }
 
 public class WaitManager : MonoBehaviour
 {
@@ -42,7 +42,7 @@ public class WaitManager : MonoBehaviour
 
     public void SetTimeTypeButtonSleaping()
     {
-        SetTimeType(TypeOfActivity.Sleaping);
+        SetTimeType(TypeOfActivity.Sleeping);
     }
 
     public void SetTimeTypeButtonWorking()
@@ -79,7 +79,7 @@ public class WaitManager : MonoBehaviour
                 {
                     case TypeOfActivity.Eating:
                         return "Time to fill your stomach";
-                    case TypeOfActivity.Sleaping:
+                    case TypeOfActivity.Sleeping:
                         return "*Sleeping*";
                     case TypeOfActivity.Working:
                         return "Working";
@@ -95,17 +95,17 @@ public class WaitManager : MonoBehaviour
                 switch (type)
                 {
                     case TypeOfActivity.Eating:
-                        return "×àñ íàïîâíèòè øëóíîê";
-                    case TypeOfActivity.Sleaping:
-                        return "*Ñïëþ*";
+                        return "Час поїсти";
+                    case TypeOfActivity.Sleeping:
+                        return "*Сплю*";
                     case TypeOfActivity.Working:
-                        return "Ïðàöþþ";
+                        return "Працюю";
                     case TypeOfActivity.Relaxing:
-                        return "íàñòàâ ÷àñ â³äïî÷èòè";
+                        return "Час відпочити";
                     case TypeOfActivity.Traveling:
-                        return "âè ïåðåáóâàºòå â äîðîç³";
+                        return "Ви на дорозі";
                     default:
-                        return "Íåâ³äîìà ä³ÿëüí³ñòü.";
+                        return "Невідома діяльність.";
                 }
                 break;
         }
